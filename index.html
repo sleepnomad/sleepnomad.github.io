@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SleepNomad &mdash; scripts and sources</title>
+<meta name="description" content="SleepNomad: long-form philosophy videos to fall asleep to. Every video&#x27;s full script and every source it cites, with page numbers and links.">
+<link rel="canonical" href="https://sleepnomad.github.io/">
+<meta property="og:site_name" content="SleepNomad">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SleepNomad &mdash; scripts and sources">
+<meta property="og:description" content="SleepNomad: long-form philosophy videos to fall asleep to. Every video&#x27;s full script and every source it cites, with page numbers and links.">
+<meta property="og:url" content="https://sleepnomad.github.io/">
+<meta property="og:image" content="https://sleepnomad.github.io/logo.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="256x256" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"SleepNomad","alternateName":"Sleep Nomad","url":"https://sleepnomad.github.io/","description":"SleepNomad: long-form philosophy videos to fall asleep to. Every video's full script and every source it cites, with page numbers and links.","publisher":{"@type":"Organization","name":"SleepNomad","url":"https://sleepnomad.github.io/","logo":{"@type":"ImageObject","url":"https://sleepnomad.github.io/logo.png"}}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --bg: #fbfaf7; --fg: #191715; --fg2: #3d3935; --muted: #78716a;
+    --bg-top: #f4ecdb; --bg-bottom: #e9ecf1;
+    --rule: #e4dfd6; --rule2: #cfc8bc; --accent: #2f5b8a; --accent-soft: #eaf0f7;
+    --serif: "Newsreader", "Iowan Old Style", Charter, Georgia, "Times New Roman", serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161514; --fg: #e8e3da; --fg2: #c3bcb1; --muted: #8e877d;
+      --bg-top: #1f1a13; --bg-bottom: #0f1219;
+      --rule: #2b2926; --rule2: #3d3a35; --accent: #8fb4dc; --accent-soft: #1c2430;
+    }
+  }
+  body {
+    background: var(--bg);
+    background-image: linear-gradient(180deg, var(--bg-top) 0%, var(--bg) 35%, var(--bg) 65%, var(--bg-bottom) 100%);
+    background-attachment: fixed;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { overflow-x: clip; }
+  body { margin: 0; color: var(--fg); font-family: var(--serif); font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 42rem; margin: 0 auto; padding: 4rem 1.25rem 6rem; }
+  img.logo { display: inline-block; height: auto; opacity: .92; }
+  @media (prefers-color-scheme: dark) { img.logo { filter: invert(1); } }
+  header.home { text-align: center; margin-bottom: 3rem; }
+  header.home .logo { width: 9rem; margin-bottom: 1rem; }
+  header.home .name { font-size: 1.5rem; font-weight: 600; letter-spacing: -.01em; color: var(--fg); margin: 0 0 .4rem; }
+  header.home .tag { color: var(--muted); font-style: italic; margin: 0 0 1.2rem; }
+  header.home .channel { display: inline-flex; align-items: center; line-height: 1; font-size: .92rem; text-decoration: none; color: var(--accent); border: 1px solid var(--rule2); border-radius: 999px; padding: .6rem 1.05rem .55rem; }
+  header.home .channel:hover { border-color: var(--accent); }
+  header.home .mail { margin: .9rem 0 0; font-size: .88rem; }
+  header.home .mail a { color: var(--muted); text-decoration: none; }
+  header.home .mail a:hover { color: var(--accent); }
+  h1 { font-weight: 500; font-size: 1.4rem; line-height: 1.2; margin: 0 0 .4rem; letter-spacing: -.005em; }
+  p.lede { color: var(--fg2); margin: 0 0 1.4rem; font-size: .98rem; }
+  ul { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--fg); }
+  li { border-bottom: 1px solid var(--rule); }
+  li a { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .9rem 0; text-decoration: none; color: var(--fg); font-size: 1.1rem; }
+  li a:hover { color: var(--accent); }
+  .n { font-size: .8rem; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; font-style: italic; }
+  footer { margin-top: 1.4rem; font-size: .84rem; line-height: 1.55; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="home">
+    <img class="logo" src="logo.png" alt="SleepNomad" width="456" height="177">
+    <p class="name">SleepNomad</p>
+    <p class="tag">Deep enough to learn from, calm enough to sleep to.</p>
+    <a class="channel" href="https://www.youtube.com/@SleepNomad" rel="noopener">Watch on YouTube &rarr;</a>
+    <p class="mail"><a href="mailto:sleepnomadyt@gmail.com">sleepnomadyt@gmail.com</a></p>
+  </header>
+  <h1>Videos</h1>
+  <ul>
+    <li><a href="augustine/">Augustine<span class="n">159 claims, 175 sources</span></a></li>
+    <li><a href="jung-alchemy/">Jung Alchemy<span class="n">222 claims, 243 sources</span></a></li>
+    <li><a href="power/">Philosophy of Power<span class="n">97 claims, 102 sources</span></a></li>
+  </ul>
+  <footer>Nothing here rests on an abstract, a summary or an encyclopedia entry.
+     A source with no link is a print book, given by edition and page so you can
+     check a library copy.</footer>
+</div>
+<script data-goatcounter="https://sleepnomad.goatcounter.com/count" async src="/count.js"></script>
+<script>
+(function () {
+  var sent = {};
+  function mark(name) {
+    if (sent[name] || !window.goatcounter || !window.goatcounter.count) return;
+    sent[name] = 1;
+    window.goatcounter.count({ path: name + ':' + location.pathname, event: true });
+  }
+  function check() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    if (max <= 0) return;
+    var p = h.scrollTop / max;
+    if (p >= 0.5) mark('scroll-half');
+    if (p >= 0.9) mark('scroll-end');
+    if (sent['scroll-half'] && sent['scroll-end'])
+      window.removeEventListener('scroll', check);
+  }
+  window.addEventListener('scroll', check, { passive: true });
+})();
+</script>
+</body>
+</html>
