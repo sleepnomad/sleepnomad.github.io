@@ -79,15 +79,30 @@
   </header>
   <h1>Videos</h1>
   <ul>
-    <li><a href="augustine/">Augustine<span class="n">159 claims, 175 sources</span></a></li>
-    <li><a href="frankfurt/">Frankfurt<span class="n">165 claims, 165 sources</span></a></li>
-    <li><a href="jung-alchemy/">Jung Alchemy<span class="n">222 claims, 243 sources</span></a></li>
-    <li><a href="power/">Philosophy of Power<span class="n">97 claims, 102 sources</span></a></li>
+    <li data-video="f49-9rWXAXg"><a href="augustine/"><span class="t">Augustine</span><span class="n">159 claims, 175 sources</span></a></li>
+    <li data-video="Y1kaqxY3wRM"><a href="frankfurt/"><span class="t">Frankfurt</span><span class="n">165 claims, 165 sources</span></a></li>
+    <li data-video="38hSLATTsUI"><a href="jung-alchemy/"><span class="t">Jung Alchemy</span><span class="n">222 claims, 243 sources</span></a></li>
+    <li data-video="jcv3cx3AaFc"><a href="power/"><span class="t">Philosophy of Power</span><span class="n">97 claims, 102 sources</span></a></li>
   </ul>
   <footer>Nothing here rests on an abstract, a summary or an encyclopedia entry.
      A source with no link is a print book, given by edition and page so you can
      check a library copy.</footer>
 </div>
+
+<script>
+(function(){
+  // Show each video's CURRENT YouTube title. The stored name stays if the lookup fails.
+  var els = document.querySelectorAll('[data-video]');
+  Array.prototype.forEach.call(els, function(el){
+    var id = el.getAttribute('data-video'); if (!id) return;
+    var target = el.querySelector('.t') || el;
+    fetch('https://noembed.com/embed?url=' + encodeURIComponent('https://www.youtube.com/watch?v=' + id))
+      .then(function(r){ return r.json(); })
+      .then(function(j){ if (j && j.title) target.textContent = j.title; })
+      .catch(function(){});
+  });
+})();
+</script>
 <script data-goatcounter="https://sleepnomad.goatcounter.com/count" async src="/count.js"></script>
 <script>
 (function () {

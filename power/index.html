@@ -79,6 +79,8 @@
   .wrap { max-width: 78rem; margin: 0 auto; padding: 3.5rem 1.25rem 6rem; }
 
   header.mast { max-width: 44rem; margin-bottom: 2.2rem; }
+  .video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 1.6rem; background: #000; border-radius: 4px; overflow: hidden; }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .eyebrow { font-size: .8rem; font-style: italic; color: var(--muted); margin-bottom: .5rem; }
   h1 {
     font-weight: 500; font-size: clamp(1.9rem, 4vw, 2.5rem);
@@ -185,7 +187,8 @@
 </div></div>
 <div class="wrap">
   <header class="mast">
-    <h1 data-claims="97" data-sources="102">Philosophy of Power</h1>
+    <h1 data-claims="97" data-sources="102" data-video="jcv3cx3AaFc">Philosophy of Power</h1>
+    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/jcv3cx3AaFc" title="Watch the video" loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
     <nav class="parts" aria-label="Parts"><a href="#part-1"><span class="nn">1</span>The Name That Changes Nothing</a><a href="#part-2"><span class="nn">2</span>What a Prince Actually Owns</a><a href="#part-3"><span class="nn">3</span>How Would You Ever Know Who Won</a><a href="#part-4"><span class="nn">4</span>The Room Nobody Was Watching</a><a href="#part-5"><span class="nn">5</span>The People Who Won By Losing</a><a href="#part-6"><span class="nn">6</span>The Order Is The Weakest Thing They Have</a><a href="#part-7"><span class="nn">7</span>The Machine That Does Not Care Whose Hand Is On It</a><a href="#part-8"><span class="nn">8</span>The Building That Lost Its Argument</a><a href="#part-9"><span class="nn">9</span>Hold Is The Wrong Verb</a><a href="#part-10"><span class="nn">10</span>What Counts As You Doing Well</a><a href="#part-11"><span class="nn">11</span>Nobody Made You Open It</a><a href="#part-12"><span class="nn">12</span>The Word You Were Never Given</a><a href="#part-13"><span class="nn">13</span>What You Have When Nothing Is Happening</a><a href="#part-14"><span class="nn">14</span>If No One Chose It, Who Do You Ask</a><a href="#part-15"><span class="nn">15</span>What Actually Pulls The Pedestal</a></nav>
   </header>
 
@@ -417,7 +420,7 @@
   <aside class="panel" id="panel" aria-label="Sources, level with the text"></aside>
 </div>
 
-  
+  <p class="back"><a href="https://www.youtube.com/watch?v=jcv3cx3AaFc" rel="noopener">back to the video</a></p>
 </div>
 <script>
 (function () {
@@ -529,6 +532,21 @@
     if (history.replaceState) history.replaceState(null, '', location.pathname);
     window.scrollTo(0, 0);
   }
+})();
+</script>
+
+<script>
+(function(){
+  // Show each video's CURRENT YouTube title. The stored name stays if the lookup fails.
+  var els = document.querySelectorAll('[data-video]');
+  Array.prototype.forEach.call(els, function(el){
+    var id = el.getAttribute('data-video'); if (!id) return;
+    var target = el.querySelector('.t') || el;
+    fetch('https://noembed.com/embed?url=' + encodeURIComponent('https://www.youtube.com/watch?v=' + id))
+      .then(function(r){ return r.json(); })
+      .then(function(j){ if (j && j.title) target.textContent = j.title; })
+      .catch(function(){});
+  });
 })();
 </script>
 <script data-goatcounter="https://sleepnomad.goatcounter.com/count" async src="/count.js"></script>
